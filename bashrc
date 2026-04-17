@@ -125,3 +125,19 @@ alias ...='cd ../..'
 alias gs='git status'
 alias gd='git diff'
 alias gl='git log --oneline --graph --decorate -20'
+
+_git_branch() {
+  git branch --show-current 2>/dev/null
+}
+
+_prompt() {
+  local branch
+  branch=$(_git_branch)
+  if [ -n "$branch" ]; then
+    PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \[\033[01;33m\]('"$branch"')\[\033[00m\]\$ '
+  else
+    PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+  fi
+}
+
+PROMPT_COMMAND='_prompt'
