@@ -15,3 +15,5 @@ symlink() {
 }
 
 symlink gitconfig .gitconfig
+symlink gitignore_global .gitignore_global
+symlink bashrc .bashrc

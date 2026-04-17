@@ -7,3 +7,9 @@
 [user]
 	name = Jason Sherron
 	email = jason@sherron.com
+
+[core]
+	excludesfile = ~/.gitignore_global
+
+[init]
+	defaultBranch = main
